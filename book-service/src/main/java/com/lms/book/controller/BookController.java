@@ -1,6 +1,8 @@
 package com.lms.book.controller;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,6 +20,8 @@ import com.lms.book.repository.BookRepository;
 @RestController
 @RequestMapping("/book-service")
 public class BookController {
+	
+	private static Logger logger = Logger.getLogger(BookController.class.getName());
 	@Autowired
 	BookRepository bookRepo;
 	
@@ -54,6 +58,8 @@ public class BookController {
 	
 	@GetMapping("/searchByKey/{key}")
 	public List<Book> findByKey(@PathVariable("key") String key){
+		System.out.println("Book service called!");
+		logger.log(Level.INFO, "Book Service findByKey endpoint called with key : {0}",key);
 		return bookRepo.findByBookIdOrBookNameOrAuthorOrTitle(key, key, key, key);
 	}
 	

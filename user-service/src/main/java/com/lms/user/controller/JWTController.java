@@ -36,11 +36,9 @@ public class JWTController {
 			this.authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(jwtRequest.getUserName(), jwtRequest.getPassword()));
 			
 		} catch (UsernameNotFoundException e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			throw new Exception("Bad credentials");
 		}  catch (BadCredentialsException e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			throw new Exception("Bad credentials");
 		}
