@@ -1,4 +1,4 @@
-package com.lms.user.controller;
+package com.lms.book.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lms.user.model.JwtRequest;
-import com.lms.user.model.JwtResponse;
-import com.lms.user.service.CustomUserDetailService;
-import com.lms.user.util.JwtUtil;
+import com.lms.book.model.JwtRequest;
+import com.lms.book.model.JwtResponse;
+import com.lms.book.service.CustomUserDetailService;
+import com.lms.book.util.JwtUtil;
 
 @RestController
 public class JWTController {
